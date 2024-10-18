@@ -1,0 +1,48 @@
+﻿@model IEnumerable<Claim>
+
+<h2 class="text-center mb-4" style="color: aqua;">Claim List</h2>
+
+<table class="table table-responsive table-hover table-bordered" style="background-color: #F5DEB3; border: 2px solid #8B4513;">
+    <thead style="background-color: #D2B48C;">
+            <tr>
+                <th style="color: yellow;">Claim Name</th>
+                <th style="color: yellow;">Claim Surname</th>
+                <th style="color: yellow;">Claim Title</th>
+                <th style="color: yellow;">Claim Date</th>
+                <th style="color: yellow;">Hours Worked</th>
+                <th style="color: yellow;">Hourly Rate</th>
+                <th style="color: yellow;">Amount</th>
+                <th style="color: yellow;">UploadFile</th>
+                <th style="color: yellow;">Status</th>
+                <th style="color: yellow;">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var claim in Model)
+            {
+                <tr>
+                    <td style="background-color: #FFF8DC; color: #8B4513;">@claim.ClaimName</td>
+                    <td style="background-color: #FFF8DC; color: #8B4513;">@claim.ClaimSurname</td>
+                    <td style="background-color: #FFF8DC; color: #8B4513;">@claim.ClaimTitle</td>
+                    <td style="background-color: #FFF8DC; color: #8B4513;">@claim.ClaimDate.ToShortDateString()</td>
+                    <td style="background-color: #FFF8DC; color: #8B4513;">@claim.HoursWorked</td>
+                    <td style="background-color: #FFF8DC; color: #8B4513;">@claim.HourlyRate</td>
+                    <td style="background-color: #FFF8DC; color: #8B4513;">@claim.Amount</td>
+                    <td style="background-color: #FFF8DC; color: #8B4513;">@claim.UploadFilePath</td>
+                    <td style="background-color: #FFF8DC; color: #8B4513;">@claim.Status</td>
+                    <td>
+                    <a href="/Claim/Update/@claim.ClaimID" class="btn" style="background-color: blue; color: white; border: 1px solid #8B4513;">Update</a>
+                    <a href="/Claim/RejectClaim/@claim.ClaimID" class="btn" style="background-color: blue; color: white; border: 1px solid #8B4513;">Reject</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+<a href="/Claim/ApproveClaim" class="btn btn-primary ">Add Claim</a>
+
+<style>
+    body {
+        background-color: sienna;
+    }
+
+</style>

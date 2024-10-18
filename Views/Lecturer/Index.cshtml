@@ -1,0 +1,36 @@
+﻿@model IEnumerable<Lecturer>
+
+<h2 class="text-center mb-4" style="color: #8B4513;">Lecturer List</h2>
+
+<table class="table table-responsive table-hover table-bordered" style="background-color: #F5DEB3; border: 2px solid #8B4513;">
+    <thead style="background-color: #D2B48C;">
+        <tr>
+            <th style="color: #8B4513;">Hours Worked</th>
+            <th style="color: #8B4513;">Hourly Rate</th>
+            <th style="color: #8B4513;">Addtional Notes</th>
+            <th style="color: #8B4513;">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var lecturer in Model)
+        {
+            <tr>
+                <td style="background-color: #FFF8DC; color: #8B4513;">@lecturer.HoursWorked</td>
+                <td style="background-color: #FFF8DC; color: #8B4513;">@lecturer.HourlyRate</td>
+                <td style="background-color: #FFF8DC; color: #8B4513;">@lecturer.AdditionalNotes</td>
+                <td>
+                    <a href="/Lecturer/Edit/@lecturer.LecturerID" class="btn" style="background-color: green; color: white; border: 1px solid #8B4513;">Edit</a>
+                    <a href="/Lecturer/Delete/@lecturer.LecturerID" class="btn" style="background-color: red; color: white; border: 1px solid #8B4513;">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<a href="/Lecturer/Create" class="btn btn-primary ">Add Lecturer</a>
+
+<style>
+    body {
+        background-color: darkorange;
+    }
+
+</style>

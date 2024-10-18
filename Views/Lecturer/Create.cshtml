@@ -1,0 +1,36 @@
+﻿@model Lecturer
+
+<h2 class="text-center mb-4" style="color: #8B4513;">Add new Lecturer</h2>
+
+<form asp-action="Create" class="mx-auto p-4 shadow rounded" style="max-width: 600px; background-color: #F5DEB3; border: 2px solid #8B4513;">
+    
+    <div class="form-group mb-4">
+        <label for="HoursWorked" class="form-label fw-bold" style="color: #D2691E;">Hours Worked</label>
+        <input asp-for="HoursWorked" class="form-control" style="background-color: #FFF8DC; border: 1px solid #8B4513; color: #8B4513;" />
+        <span asp-validation-for="HoursWorked" class="text-danger"></span>
+    </div>
+
+    <div class="form-group mb-4">
+        <label for="HourlyRate" class="form-label fw-bold" style="color: #D2691E;">Hourly Rate</label>
+        <input asp-for="HourlyRate" class="form-control" style="background-color: #FFF8DC; border: 1px solid #8B4513; color: #8B4513;" />
+        <span asp-validation-for="HourlyRate" class="text-danger"></span>
+    </div>
+
+    <div class="form-group mb-4">
+        <label for="AdditionalNotes" class="form-label fw-bold" style="color: #D2691E;">Additional Notes</label>
+        <textarea asp-for="AdditionalNotes" class="form-control" style="background-color: #FFF8DC; border: 1px solid #8B4513; color: #8B4513;"></textarea>
+        <span asp-validation-for="AdditionalNotes" class="text-danger"></span>
+    </div>
+
+    <div class="d-flex justify-content-between">
+        <button type="submit" class="btn" style="background-color: #CD853F; color: white; border: 1px solid #8B4513;">Save</button>
+        <a asp-action="Index" class="btn" style="background-color: #8B4513; color: white; border: 1px solid #8B4513;">Back to List</a>
+    </div>
+</form>
+
+<style>
+    body {
+        background-color: darkorange;
+    }
+
+</style>

@@ -1,0 +1,75 @@
+﻿@model Claim
+
+<h2 class="text-center mb-4" style="color: aqua;">Add new Claim</h2>
+
+<form asp-action="ApproveClaim" class="mx-auto p-4 shadow rounded" style="max-width: 600px; background-color: #F5DEB3; border: 2px solid #8B4513;">
+
+    
+    <div class="form-group mb-4">
+        <input type="hidden" asp-for="ClaimID" />
+        <label for="ClaimName" class="form-label fw-bold" style="color: #D2691E;">Claim Name</label>
+        <input asp-for="ClaimName" class="form-control" style="background-color: #FFF8DC; border: 1px solid #8B4513; color: #8B4513;" />
+        <span asp-validation-for="ClaimName" class="text-danger"></span>
+    </div>
+
+    <div class="form-group mb-4">
+        <label for="ClaimSurname" class="form-label fw-bold" style="color: #D2691E;">Claim Surname</label>
+        <input asp-for="ClaimSurname" class="form-control" style="background-color: #FFF8DC; border: 1px solid #8B4513; color: #8B4513;" />
+        <span asp-validation-for="ClaimSurname" class="text-danger"></span>
+    </div>
+
+    <div class="form-group mb-4">
+        <label for="ClaimTitle" class="form-label fw-bold" style="color: #D2691E;">Claim Title</label>
+        <input asp-for="ClaimTitle" class="form-control" style="background-color: #FFF8DC; border: 1px solid #8B4513; color: #8B4513;" />
+        <span asp-validation-for="ClaimTitle" class="text-danger"></span>
+    </div>
+
+    <div class="form-group mb-4">
+        <label for="ClaimDate" class="form-label fw-bold" style="color: #D2691E;">Claim Date</label>
+        <input asp-for="ClaimDate" class="form-control" style="background-color: #FFF8DC; border: 1px solid #8B4513; color: #8B4513;" />
+        <span asp-validation-for="ClaimDate" class="text-danger"></span>
+    </div>
+
+    <div class="form-group mb-4">
+        <label for="HoursWorked" class="form-label fw-bold" style="color: #D2691E;">Hours Worked</label>
+        <input asp-for="HoursWorked" class="form-control" style="background-color: #FFF8DC; border: 1px solid #8B4513; color: #8B4513;" />
+        <span asp-validation-for="HoursWorked" class="text-danger"></span>
+    </div>
+
+    <div class="form-group mb-4">
+        <label for="HourlyRate" class="form-label fw-bold" style="color: #D2691E;">Hourly Rate</label>
+        <input asp-for="HourlyRate" class="form-control" style="background-color: #FFF8DC; border: 1px solid #8B4513; color: #8B4513;" />
+        <span asp-validation-for="HourlyRate" class="text-danger"></span>
+    </div>
+
+    <div class="form-group mb-4">
+        <label for="Amount" class="form-label fw-bold" style="color: #D2691E;">Amount</label>
+        <input asp-for="Amount" class="form-control" style="background-color: #FFF8DC; border: 1px solid #8B4513; color: #8B4513;" />
+        <span asp-validation-for="Amount" class="text-danger"></span>
+    </div>
+
+    <div class="form-group mb-4">
+        <label for="UploadFilePath" class="form-label fw-bold" style="color: #D2691E;">Upload File Path</label>
+        <input asp-for="UploadFilePath" method="post" enctype="multipart/form-data" class="form-control" style="background-color: #FFF8DC; border: 1px solid #8B4513; color: #8B4513;" />
+        <span asp-validation-for="UploadFilePath" class="text-danger"></span>
+        <input type="file" name="file"  accept=".pdf,.docx,.xlsx" required />
+    </div>
+
+    <div class="form-group mb-4">
+        <label for="Status" class="form-label fw-bold" style="color: #D2691E;">Status</label>
+        <input asp-for="Status" class="form-control" style="background-color: #FFF8DC; border: 1px solid #8B4513; color: #8B4513;" />
+        <span asp-validation-for="Status" class="text-danger"></span>
+    </div>
+
+    <div class="d-flex justify-content-between">
+        <button type="submit" class="btn" style="background-color: #CD853F; color: white; border: 1px solid #8B4513;">Submit</button>
+        <a asp-action="Index" class="btn" style="background-color: #8B4513; color: white; border: 1px solid #8B4513;">Back to List</a>
+    </div>
+</form>
+
+<style>
+    body {
+        background-color: darkorange;
+    }
+
+</style>
